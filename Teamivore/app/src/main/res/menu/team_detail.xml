@@ -1,8 +1,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.umich.teamivore.TeamDetailActivity" >
+
+
+    <!--
+
+        the showAsAction option determines when and how to show an item in the menu
+
+        the possible values include:
+            withText - show the item with its text (text will show if there's an icon associated)
+            ifRoom - only show the item if the phone calculates there is enough room to show it
+            always - show the item no matter what
+            collapseActionView - use this if the menu item has a collapsible view associated with it
+                                 (like a magnifying glass that expands into a search text box)
+
+    -->
+
+
+    <item android:id="@+id/action_logout"
+        android:title="@string/action_logout"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
+
 </menu>

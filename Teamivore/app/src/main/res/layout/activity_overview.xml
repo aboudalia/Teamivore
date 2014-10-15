@@ -3,8 +3,11 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <!-- ListView doesn't allow for populating within XML. To populate a list view, you must use an
+         adapter class such as the one we use in OverviewActivity.java -->
+
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>

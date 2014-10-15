@@ -38,6 +38,10 @@ public class TeamDetailActivity extends Activity {
 
     }
 
+    // initList is a helper method that grabs our "team data" and associates it with the correct id
+    // based on its position in the list
+    // in a real application, this would be where we query the database and fetch the data associated
+    // with the teams
     private void initList() {
         teamsList.add("Team 1");
         teamsList.add("Team 2");
@@ -48,6 +52,7 @@ public class TeamDetailActivity extends Activity {
         teamsList.add("Team 7");
     }
 
+    // onCreateOptionsMenu adds the options menu to your activity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -62,6 +67,11 @@ public class TeamDetailActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // launch intent to settings screen
+            return true;
+        }
+        else if (id == R.id.action_logout) {
+            // launch intent to settings screen
             return true;
         }
         return super.onOptionsItemSelected(item);

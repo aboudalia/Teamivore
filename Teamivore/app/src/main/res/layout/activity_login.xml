@@ -30,6 +30,7 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    <!-- android:onClick="logIn" makes this button call the logIn method in LoginActivity -->
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"

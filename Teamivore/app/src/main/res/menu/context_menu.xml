@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- the context menu items only display when a "long press" is detected on a view that this
+         context menu is registered to
+
+         go to OverviewActivity to see the implementation -->
+
+    <item android:id="@+id/action_favorite"
+        android:title="Add this team to your favorites"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_contact"
+        android:title="Contact this team"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+</menu>

@@ -8,4 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.umich.teamivore.TeamDetailActivity" >
 
+
+
 </RelativeLayout>

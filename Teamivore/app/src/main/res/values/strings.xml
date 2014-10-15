@@ -3,7 +3,9 @@
 
     <string name="app_name">Teamivore</string>
     <string name="hello_world">Hello world!</string>
+    <string name="action_favorites">Favorites</string>
     <string name="action_settings">Settings</string>
+    <string name="action_logout">Log Out</string>
     <string name="title_activity_overview">Team Overview</string>
     <string name="title_activity_team_detail">Team Detail</string>
 
