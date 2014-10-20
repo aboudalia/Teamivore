@@ -16,6 +16,11 @@
 
     -->
 
+    <item android:id="@+id/action_contact"
+        android:title="@string/action_contact"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_dialog_email"/>
 
     <item android:id="@+id/action_logout"
         android:title="@string/action_logout"

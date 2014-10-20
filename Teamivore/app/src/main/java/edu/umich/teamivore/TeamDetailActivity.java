@@ -2,9 +2,11 @@ package edu.umich.teamivore;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Rating;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,12 +31,13 @@ public class TeamDetailActivity extends Activity {
         int id = (int) Long.parseLong(message);
 
         // Create the text view
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
+        TextView textView = (TextView) findViewById(R.id.textView_teamname);
         textView.setText(teamsList.get(id));
 
-        // Set the text view as the activity layout
-        setContentView(textView);
+        // Just to demonstrate, the following two lines grab a rating bar element and set its value
+        // programatically
+        RatingBar ratings = (RatingBar) findViewById(R.id.ratingBar2);
+        ratings.setRating(2);
 
     }
 
@@ -43,13 +46,13 @@ public class TeamDetailActivity extends Activity {
     // in a real application, this would be where we query the database and fetch the data associated
     // with the teams
     private void initList() {
-        teamsList.add("Team 1");
-        teamsList.add("Team 2");
-        teamsList.add("Team 3");
-        teamsList.add("Team 4");
-        teamsList.add("Team 5");
-        teamsList.add("Team 6");
-        teamsList.add("Team 7");
+        teamsList.add("Team 1: Uproar Labs");
+        teamsList.add("Team 2: Bogus Trust");
+        teamsList.add("Team 3: Gejago");
+        teamsList.add("Team 4: Jagurr");
+        teamsList.add("Team 5: Raspy Puck");
+        teamsList.add("Team 6: Ladybug Studios");
+        teamsList.add("Team 7: Fourtwelve");
     }
 
     // onCreateOptionsMenu adds the options menu to your activity
