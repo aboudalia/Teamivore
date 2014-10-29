@@ -90,3 +90,4 @@ proguard/
 *.ipr
 *.iws
 .idea/
+build/intermediates/model_data.bin

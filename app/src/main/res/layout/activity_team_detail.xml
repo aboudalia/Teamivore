@@ -1,56 +1,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#029ACC" >
 
     <!-- Intended design outcome of carousel at the top: http://unitid.nl/androidpatterns/uap_pattern/rating-stars -->
 
     <!-- The text in this TextView is overwritten programatically in TeamDetailActivity.java -->
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team N"
-        android:id="@+id/textView_teamname"
-        android:textSize="24dp"
-        android:paddingBottom="15dp"/>
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star_big_on"
+            android:layout_gravity="center"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team N"
+            android:id="@+id/textView_teamname"
+            android:textSize="24dp"
+            android:padding="15dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <!-- This empty view element simply creates a dark gray divider -->
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <!-- Placeholder image for image carousel view -->
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/carousel_placeholder"
-        android:layout_gravity="center_horizontal" />
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/background_light" />
 
     <!-- Views do not automatically enable scrolling when there is no screen space left. You must
           use a ScrollView to enable scrolling in any part of your app -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"  >
 
-        <TableLayout
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="25dp">
+            android:orientation="vertical"
+            android:background="#92C200">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/temp1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/temp2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/temp3"/>
+
+        </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/background_light"
+
+                android:layout_marginTop="10dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#999"
+                android:layout_marginBottom="10dp"
+ />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;"
+        android:padding="20dp"
+        android:textColor="#fff"
+        />
+            
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -62,18 +111,15 @@
                 <!-- Rating Views are editable by default. The option "isIndicator" being set to
                       true makes the view non-changable by the user -->
 
+                
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/ratingBar2"
                     android:rating="4"
                     android:isIndicator="true" />
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -88,12 +134,7 @@
                     android:id="@+id/ratingBar3"
                     android:rating="3"
                     android:isIndicator="true" />
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -103,17 +144,12 @@
                     android:id="@+id/textView4" />
 
                 <RatingBar
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ratingBar4"
                     android:rating="4"
                     android:isIndicator="true" />
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -128,18 +164,13 @@
                     android:id="@+id/ratingBar5"
                     android:rating="4"
                     android:isIndicator="true" />
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Implementation"
+                    android:text="Profitability"
                     android:id="@+id/textView6" />
 
                 <RatingBar
@@ -148,9 +179,10 @@
                     android:id="@+id/ratingBar6"
                     android:rating="3"
                     android:isIndicator="true" />
-            </TableRow>
 
-        </TableLayout>
+        </LinearLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 
