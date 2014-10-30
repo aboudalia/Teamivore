@@ -3,8 +3,6 @@ package edu.umich.teamivore;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 
@@ -32,6 +30,13 @@ public class LoginActivity extends Activity {
         // make note that a true login activity would perform much more complex actions after
         // clicking the login button such as authentication and database lookups, but for the
         // purposes of this demo, we leave those out
+
+    }
+
+    public void createAccount(View view) {
+
+        Intent intent = new Intent(this, TestingViewsActivity.class);
+        startActivity(intent);
 
     }
 }

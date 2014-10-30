@@ -28,6 +28,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.umich.teamivore.OverviewActivity" />
         </activity>
+        <activity
+            android:name=".TestingViewsActivity"
+            android:label="@string/title_activity_testing_views"
+            android:parentActivityName=".LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.umich.teamivore.LoginActivity" />
+        </activity>
     </application>
 
 </manifest>

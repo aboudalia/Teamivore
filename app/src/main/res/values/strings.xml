@@ -9,5 +9,6 @@
     <string name="action_contact">  Contact</string>
     <string name="title_activity_overview">Team Overview</string>
     <string name="title_activity_team_detail">Team Detail</string>
+    <string name="title_activity_testing_views">Test Page</string>
 
 </resources>
