@@ -58,15 +58,17 @@ public class OverviewActivity extends Activity {
 
     // initList simply adds our team names to the list variable
     // in a real app, this would be where we query our database to retrieve the list of teams, but
-    // for the sake of our demo, this hard-coded data is sufficient
+    // we can perform some shared preferences data storing for now
     private void initList() {
-        teamsList.add(createTeam("team", "Team 1: Uproar Labs"));
-        teamsList.add(createTeam("team", "Team 2: Bogus Trust"));
-        teamsList.add(createTeam("team", "Team 3: Gejago"));
-        teamsList.add(createTeam("team", "Team 4: Jagurr"));
-        teamsList.add(createTeam("team", "Team 5: Raspy Puck"));
-        teamsList.add(createTeam("team", "Team 6: Ladybug Studios"));
-        teamsList.add(createTeam("team", "Team 7: Fourtwelve"));
+
+        List<String> teams = SharedPreferencesUtility.getStringList(this, "teams");
+
+        for(String t: teams) {
+
+            teamsList.add(createTeam("team", t));
+
+        }
+
     }
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
@@ -133,7 +135,9 @@ public class OverviewActivity extends Activity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        //AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
         int id = item.getItemId();
 
         if (id == R.id.action_favorite) {

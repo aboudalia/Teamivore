@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class LoginActivity extends Activity {
 
@@ -15,6 +18,10 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Since everyone has to pass through the login screen, we will initialize our data structures here
+        initData();
+
     }
 
     // the logIn method is associated with the appropriate button in xml using the
@@ -39,4 +46,21 @@ public class LoginActivity extends Activity {
         startActivity(intent);
 
     }
+    
+    private void initData() {
+
+        List<String> teamsList = new ArrayList<String>();
+
+        teamsList.add("Team 1: Uproar Labs");
+        teamsList.add("Team 2: Bogus Trust");
+        teamsList.add("Team 3: Gejago");
+        teamsList.add("Team 4: Jagurr");
+        teamsList.add("Team 5: Raspy Puck");
+        teamsList.add("Team 6: Ladybug Studios");
+        teamsList.add("Team 7: Fourtwelve");
+
+        SharedPreferencesUtility.putStringList(this, "teams", teamsList);
+
+    }
+    
 }

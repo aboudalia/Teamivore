@@ -2,20 +2,17 @@ package edu.umich.teamivore;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Rating;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class TeamDetailActivity extends Activity {
 
-    List<String> teamsList = new ArrayList<String>();
+    List<String> teamsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +42,11 @@ public class TeamDetailActivity extends Activity {
     // based on its position in the list
     // in a real application, this would be where we query the database and fetch the data associated
     // with the teams
+    // we can perform some shared preferences data storing for now
     private void initList() {
-        teamsList.add("Team 1: Uproar Labs");
-        teamsList.add("Team 2: Bogus Trust");
-        teamsList.add("Team 3: Gejago");
-        teamsList.add("Team 4: Jagurr");
-        teamsList.add("Team 5: Raspy Puck");
-        teamsList.add("Team 6: Ladybug Studios");
-        teamsList.add("Team 7: Fourtwelve");
+
+        teamsList = SharedPreferencesUtility.getStringList(this, "teams");
+
     }
 
     // onCreateOptionsMenu adds the options menu to your activity
