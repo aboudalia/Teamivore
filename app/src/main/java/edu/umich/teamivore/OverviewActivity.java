@@ -61,9 +61,9 @@ public class OverviewActivity extends Activity {
     // we can perform some shared preferences data storing for now
     private void initList() {
 
-        List<String> teams = SharedPreferencesUtility.getStringList(this, "teams");
+        List<Team> teams = SharedPreferencesUtility.getTeamList(this, "teams");
 
-        for(String t: teams) {
+        for(Team t: teams) {
 
             teamsList.add(createTeam("team", t));
 
@@ -73,8 +73,9 @@ public class OverviewActivity extends Activity {
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
     // a team name into out list
-    private HashMap<String, String> createTeam(String key, String name) {
+    private HashMap<String, String> createTeam(String key, Team t) {
         HashMap<String, String> team = new HashMap<String, String>();
+        String name = t.getId() + ": " + t.getName();
         team.put(key, name);
         return team;
     }

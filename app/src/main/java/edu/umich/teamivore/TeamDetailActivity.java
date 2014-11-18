@@ -9,10 +9,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import java.util.List;
 
-
 public class TeamDetailActivity extends Activity {
 
-    List<String> teamsList;
+    List<Team> teamsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class TeamDetailActivity extends Activity {
 
         // Create the text view
         TextView textView = (TextView) findViewById(R.id.textView_teamname);
-        textView.setText(teamsList.get(id));
+        textView.setText(teamsList.get(id).getName());
 
         // Just to demonstrate, the following two lines grab a rating bar element and set its value
         // programatically
@@ -45,7 +44,7 @@ public class TeamDetailActivity extends Activity {
     // we can perform some shared preferences data storing for now
     private void initList() {
 
-        teamsList = SharedPreferencesUtility.getStringList(this, "teams");
+        teamsList = SharedPreferencesUtility.getTeamList(this, "teams");
 
     }
 

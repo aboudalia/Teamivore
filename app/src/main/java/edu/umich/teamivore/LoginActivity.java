@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
     
     private void initData() {
 
-        List<String> teamsList = new ArrayList<String>();
+        /*List<String> teamsList = new ArrayList<String>();
 
         teamsList.add("Team 1: Uproar Labs");
         teamsList.add("Team 2: Bogus Trust");
@@ -60,6 +60,26 @@ public class LoginActivity extends Activity {
         teamsList.add("Team 7: Fourtwelve");
 
         SharedPreferencesUtility.putStringList(this, "teams", teamsList);
+        */
+
+        List<Team> teamsList = new ArrayList<Team>();
+
+        String defaultDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" +
+                " eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam," +
+                " quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." +
+                " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu " +
+                "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
+                "culpa qui officia deserunt mollit anim id est laborum.";
+
+        teamsList.add(new Team(1, "Uproar Labs", defaultDescription));
+        teamsList.add(new Team(2, "Bogus Trust", defaultDescription));
+        teamsList.add(new Team(3, "Gejago", defaultDescription));
+        teamsList.add(new Team(4, "Jagurr", defaultDescription));
+        teamsList.add(new Team(5, "Raspy Puck", defaultDescription));
+        teamsList.add(new Team(6, "Ladybug Studios", defaultDescription));
+        teamsList.add(new Team(7, "Fourtwelve", defaultDescription));
+
+        SharedPreferencesUtility.putTeamList(this, "teams", teamsList);
 
     }
     
