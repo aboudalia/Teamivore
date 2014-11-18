@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +13,57 @@ import java.util.List;
 
 public class SharedPreferencesUtility {
 
+    public static List<Team> getTeamList(Activity activity, String key) {
+
+        List<Team> list = new ArrayList<Team>();
+
+        // grab the preferences associated with the activity passed into this method
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+        String listString = preferences.getString(key, "");
+
+        if(listString.length() != 0) {
+
+            String[] teams = listString.split(";;");
+
+            // loop through teams
+            for (String t : teams) {
+
+                String[] teamAttributes = t.split(";");
+
+                int id = Integer.parseInt(teamAttributes[0]);
+                String name = teamAttributes[1];
+                String description = teamAttributes[2];
+                Team newTeam = new Team(id, name, description);
+
+                list.add(newTeam);
+
+            }
+
+        }
+
+        return list;
+
+    }
+
+    public static void putTeamList(Activity activity, String key, List<Team> list) {
+
+        List<String> tempList = new ArrayList<String>();
+
+        for(Team t: list) {
+
+            String tempTeamString = t.getId() + ";" +
+                                    t.getName() + ";" +
+                                    t.getDescription();
+
+            tempList.add(tempTeamString);
+
+        }
+
+        String listString = TextUtils.join(";;", tempList);
+
+        myPutString(activity, key, listString);
+
+    }
 
     public static List<String> getStringList(Activity activity, String key) {
 
@@ -22,9 +72,6 @@ public class SharedPreferencesUtility {
         // grab the preferences associated with the activity passed into this method
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
         String listString = preferences.getString(key, "");
-
-        Log.i("MyActivity", "Getting" + listString);
-
 
         if(listString.length() != 0) {
 
@@ -43,8 +90,6 @@ public class SharedPreferencesUtility {
 
         }
 
-        Log.i("MyActivity", "Getting size " + list.size());
-
         return list;
 
     }
@@ -60,9 +105,16 @@ public class SharedPreferencesUtility {
         String listString = TextUtils.join(";", list);
 
         // save the new combined string into preferences
+        myPutString(activity, key, listString);
+
+    }
+
+    // utility that wraps together the sharedpreferences call into one method
+    private static void myPutString(Activity activity, String key, String value) {
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(key, listString);
+        editor.putString(key, value);
         editor.apply();
 
     }
