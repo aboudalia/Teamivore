@@ -75,7 +75,7 @@ public class OverviewActivity extends Activity {
     // a team name into out list
     private HashMap<String, String> createTeam(String key, Team t) {
         HashMap<String, String> team = new HashMap<String, String>();
-        String name = t.getId() + ": " + t.getName();
+        String name = t.getName();
         team.put(key, name);
         return team;
     }
@@ -112,8 +112,8 @@ public class OverviewActivity extends Activity {
             // launch intent to log out the user (that then sends user back to login activity)
             return true;
         }
-        else if (id == R.id.action_favorites) {
-            // launch intent to go to favorites
+        else if (id == R.id.action_add_team) {
+            addTeam();
             return true;
         }
 
@@ -154,6 +154,11 @@ public class OverviewActivity extends Activity {
 
         return super.onContextItemSelected(item);
 
+    }
+
+    public void addTeam() {
+        Intent intent = new Intent(this, AddTeamActivity.class);
+        startActivity(intent);
     }
 
 }

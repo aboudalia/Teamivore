@@ -16,10 +16,16 @@
 
     -->
 
+    <item android:id="@+id/action_delete_team"
+        android:title="@string/action_delete_team"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_delete" />
+
     <item android:id="@+id/action_contact"
         android:title="@string/action_contact"
         android:orderInCategory="100"
-        android:showAsAction="always|withText"
+        android:showAsAction="always"
         android:icon="@android:drawable/ic_dialog_email"/>
 
     <item android:id="@+id/action_logout"

@@ -18,11 +18,11 @@
     <!-- there are a number of icons available to you such as the btn_star_big_off shown below
          an unofficial resource with pictures can be found here: http://androiddrawables.com/ -->
 
-    <item android:id="@+id/action_favorites"
-        android:title="@string/action_favorites"
+    <item android:id="@+id/action_add_team"
+        android:title="@string/action_add_team"
         android:orderInCategory="100"
-        android:showAsAction="always"
-        android:icon="@android:drawable/btn_star_big_off"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_input_add"
         />
 
     <item android:id="@+id/action_settings"

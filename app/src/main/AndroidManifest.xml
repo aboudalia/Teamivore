@@ -36,6 +36,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.umich.teamivore.LoginActivity" />
         </activity>
+        <activity
+            android:name=".AddTeamActivity"
+            android:label="@string/title_activity_add_team"
+            android:parentActivityName=".OverviewActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.umich.teamivore.OverviewActivity" />
+        </activity>
     </application>
 
 </manifest>

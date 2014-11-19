@@ -71,13 +71,13 @@ public class LoginActivity extends Activity {
                 "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
                 "culpa qui officia deserunt mollit anim id est laborum.";
 
-        teamsList.add(new Team(1, "Uproar Labs", defaultDescription));
-        teamsList.add(new Team(2, "Bogus Trust", defaultDescription));
-        teamsList.add(new Team(3, "Gejago", defaultDescription));
-        teamsList.add(new Team(4, "Jagurr", defaultDescription));
-        teamsList.add(new Team(5, "Raspy Puck", defaultDescription));
-        teamsList.add(new Team(6, "Ladybug Studios", defaultDescription));
-        teamsList.add(new Team(7, "Fourtwelve", defaultDescription));
+        teamsList.add(new Team("Uproar Labs", defaultDescription));
+        teamsList.add(new Team("Bogus Trust", defaultDescription));
+        teamsList.add(new Team("Gejago", defaultDescription));
+        teamsList.add(new Team("Jagurr", defaultDescription));
+        teamsList.add(new Team("Raspy Puck", defaultDescription));
+        teamsList.add(new Team("Ladybug Studios", defaultDescription));
+        teamsList.add(new Team("Fourtwelve", defaultDescription));
 
         SharedPreferencesUtility.putTeamList(this, "teams", teamsList);
 

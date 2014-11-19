@@ -30,10 +30,9 @@ public class SharedPreferencesUtility {
 
                 String[] teamAttributes = t.split(";");
 
-                int id = Integer.parseInt(teamAttributes[0]);
-                String name = teamAttributes[1];
-                String description = teamAttributes[2];
-                Team newTeam = new Team(id, name, description);
+                String name = teamAttributes[0];
+                String description = teamAttributes[1];
+                Team newTeam = new Team(name, description);
 
                 list.add(newTeam);
 
@@ -51,8 +50,7 @@ public class SharedPreferencesUtility {
 
         for(Team t: list) {
 
-            String tempTeamString = t.getId() + ";" +
-                                    t.getName() + ";" +
+            String tempTeamString = t.getName() + ";" +
                                     t.getDescription();
 
             tempList.add(tempTeamString);
